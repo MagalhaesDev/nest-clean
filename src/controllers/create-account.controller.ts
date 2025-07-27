@@ -12,7 +12,7 @@ import { z } from 'zod'
 
 const createAccountBodySchema = z.object({
   name: z.string(),
-  email: z.string().email(),
+  email: z.email(),
   password: z.string(),
 })
 
@@ -45,7 +45,7 @@ export class CreateAccountController {
       data: {
         name,
         email,
-        hashedPassword,
+        password: hashedPassword,
       },
     })
   }
