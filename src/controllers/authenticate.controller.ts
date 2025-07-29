@@ -50,6 +50,8 @@ export class AuthenticateController {
       sub: user.id,
     })
 
-    return accessToken
+    return {
+      access_token: accessToken,
+    }
   }
 }
